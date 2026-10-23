@@ -11,6 +11,19 @@
 </head>
 <body>
 <div class="petals" aria-hidden="true"></div>
+<aside id="installBanner" class="install-banner" aria-label="Установка приложения" hidden>
+  <img class="install-badge" src="./icon-192-v3.png" alt="" width="48" height="48">
+  <div class="install-copy"><strong>Маркообразные — на телефон</strong><span>Новости клуба всегда под рукой</span></div>
+  <button id="installNow" class="install-action" type="button">Установить</button>
+  <button id="installDismiss" class="install-dismiss" type="button" aria-label="Закрыть предложение установки">×</button>
+</aside>
+<dialog id="installHelp" class="install-help" aria-labelledby="installHelpTitle">
+  <button class="install-help-close" id="installHelpClose" aria-label="Закрыть инструкцию" type="button">×</button>
+  <h2 id="installHelpTitle">Установка приложения</h2>
+  <div id="installHelpBody"></div>
+  <button id="installHelpDone" class="install-help-done" type="button">Понятно</button>
+</dialog>
+
 <div id="app">
 <section id="onboard" class="welcome">
 <div class="welcome-card">
@@ -102,5 +115,6 @@
 </section></div>
 <dialog id="storyDialog"><button id="closeDialog" class="closebtn">✕</button><div id="dialogContent"></div></dialog>
 <script src="./social-qr.js" defer></script>
+<script src="./install.js" defer></script>
 <script src="./app.js" defer></script>
 </body></html>
