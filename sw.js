@@ -1,5 +1,5 @@
 /* Network-first HTML, cache only static files; GitHub Issues are always queried online. */
-const VERSION='mnsk-issues-demo-v1';
+const VERSION='mnsk-issues-demo-v2';
 const BASE=new URL('./',self.registration.scope).href;
 const STATIC=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',ev=>ev.waitUntil(caches.open(VERSION).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting())));
