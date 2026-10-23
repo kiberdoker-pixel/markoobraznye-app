@@ -1,7 +1,7 @@
 /* Network-first HTML, cache only static files; GitHub Issues are always queried online. */
-const VERSION='mnsk-issues-demo-v12-uncropped-admin-photos';
+const VERSION='mnsk-issues-demo-v13-sakura-background';
 const BASE=new URL('./',self.registration.scope).href;
-const STATIC=['./','./index.html','./style.css','./app.js','./social-qr.js','./install.js','./assets/club-logo-official-hq.svg','./assets/admin-mikhail.webp','./assets/admin-irina.webp','./manifest.webmanifest','./icon-192-v3.png','./icon-512-v3.png'];
+const STATIC=['./','./index.html','./style.css','./app.js','./social-qr.js','./install.js','./assets/sakura-evening.webp','./assets/club-logo-official-hq.svg','./assets/admin-mikhail.webp','./assets/admin-irina.webp','./manifest.webmanifest','./icon-192-v3.png','./icon-512-v3.png'];
 self.addEventListener('install',ev=>ev.waitUntil(caches.open(VERSION).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',ev=>ev.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',ev=>{

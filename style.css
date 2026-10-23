@@ -85,3 +85,51 @@ dialog{max-width:min(600px,95vw);max-height:85vh;overflow:auto;border:1px solid 
 .admin-profile__details p{margin:8px 0 0;color:#f08a97;font-size:.89rem;font-weight:650}
 @media (max-width:920px){.admin-grid--profiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:620px){.admin-grid--profiles{grid-template-columns:1fr;gap:16px}}
+
+
+/* Sakura atmosphere v13 — lighter graphite base with the club's approved artwork.
+   Screen blend keeps the illustration behind the content without making it darker. */
+:root{
+  --bg:#1d2635;
+  --panel:#202a39;
+  --panel2:#2a3444;
+  --muted:#b3beca;
+  --stroke:rgba(255,255,255,.15);
+}
+html{background:#1d2635}
+body{
+  background:
+    radial-gradient(ellipse at 86% 9%,rgba(176,113,161,.19),transparent 40%),
+    radial-gradient(ellipse at 8% 89%,rgba(143,85,130,.19),transparent 43%),
+    linear-gradient(163deg,#263548 0%,#1e2b3c 35%,#1c2536 68%,#272337 100%);
+}
+body:before,body:after{opacity:.11}
+.petals{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:url("./assets/sakura-evening.webp");
+  background-position:center bottom;
+  background-repeat:no-repeat;
+  background-size:min(100vw,1040px) auto;
+  mix-blend-mode:screen;
+  opacity:.68;
+}
+.masthead{
+  background:linear-gradient(180deg,rgba(16,22,33,.89),rgba(27,31,45,.77));
+}
+.welcome-card{
+  background:linear-gradient(160deg,rgba(32,41,56,.97),rgba(19,25,37,.97));
+}
+.tile{
+  background:radial-gradient(circle at 100% 5%,rgba(241,139,175,.14),transparent 55%),linear-gradient(150deg,#2c3645,#1b2433);
+}
+.news-card{background:linear-gradient(145deg,#2b3444,#1a2230)}
+.social-section{
+  background:radial-gradient(ellipse at 96% 4%,rgba(229,116,157,.15),transparent 45%),linear-gradient(145deg,#283241,#1b2432);
+}
+.admin-profile{background:linear-gradient(150deg,#293342,#182230)}
+@media (min-width:900px) {
+  .petals{background-size:min(78vw,1180px) auto;opacity:.56}
+}
