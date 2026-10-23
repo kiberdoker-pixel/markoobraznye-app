@@ -1,5 +1,5 @@
 /* Network-first HTML, cache only static files; GitHub Issues are always queried online. */
-const VERSION='mnsk-issues-demo-v6-brand';
+const VERSION='mnsk-issues-demo-v7-full-logo';
 const BASE=new URL('./',self.registration.scope).href;
 const STATIC=['./','./index.html','./style.css','./app.js','./social-qr.js','./install.js','./assets/club-logo-official.webp','./manifest.webmanifest','./icon-192-v3.png','./icon-512-v3.png'];
 self.addEventListener('install',ev=>ev.waitUntil(caches.open(VERSION).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting())));
