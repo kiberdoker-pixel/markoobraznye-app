@@ -20,3 +20,31 @@ body:before{right:-200px;top:-100px;transform:rotate(30deg)}body:after{left:-290
 .bottom{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;background:rgba(12,17,24,.97);border-top:1px solid rgba(255,255,255,.15);padding:9px 9px calc(9px + env(safe-area-inset-bottom));justify-content:space-around;backdrop-filter:blur(18px)}.bottom button{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;border:0;background:none;color:#a9b5c0;font-size:1.4rem;padding:6px 3px}.bottom button span{font-size:.67rem}.bottom .current{color:#ff6b7a}
 dialog{max-width:min(600px,95vw);max-height:85vh;overflow:auto;border:1px solid #66707c;background:#141a23;color:#fff;border-radius:16px;padding:26px;box-shadow:0 20px 70px #000b}dialog::backdrop{background:#000b}dialog p{white-space:pre-wrap;line-height:1.7;color:#c4ccd5}dialog img{max-width:100%;border-radius:12px}.closebtn{float:right;background:none;border:0;color:#fff;font-size:1.4rem}
 @media(max-width:750px){.tile-grid,.newslist,.admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tile{min-height:165px}.masthead .wordmark{font-size:clamp(1.6rem,7.2vw,3.5rem)}}@media(max-width:460px){.masthead-inner{padding:23px 15px}.wrap{padding:0 14px 114px}.tile{padding:13px 11px;min-height:156px}.tile strong{font-size:.91rem}.tile small{font-size:.76rem}.newslist{grid-template-columns:1fr}.hero{padding:22px;min-height:260px}.hero h2{font-size:2.15rem}.admin-grid{grid-template-columns:1fr}.event-card{padding:15px;gap:10px}.event-card .day{font-size:1.5rem;min-width:52px}.welcome-card{padding:30px 19px}}
+
+/* Club social links: three scannable QRs, swipeable on small screens. */
+.social-section{margin:0 0 27px;padding:20px;border-radius:21px;border:1px solid rgba(245,245,245,.12);background:radial-gradient(ellipse at 96% 4%,rgba(226,96,137,.14),transparent 45%),linear-gradient(145deg,#1c232b,#10141b);box-shadow:0 14px 38px #0002}
+.social-head{display:flex;gap:16px;align-items:end;justify-content:space-between;margin:0 0 17px}
+.social-head h3{font-size:1.42rem;letter-spacing:-.04em;margin:6px 0 0}
+.social-head p{max-width:375px;margin:0;font-size:.82rem;color:#b4beca;line-height:1.55}
+.social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.social-card{display:flex;flex-direction:column;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(150deg,rgba(46,54,65,.93),rgba(14,19,26,.96));border-radius:17px;padding:15px;min-width:0}
+.social-name{display:flex;gap:10px;align-items:center;align-self:stretch;min-height:42px}
+.social-name strong{display:block;font-size:.94rem;line-height:1.22}
+.social-name small{display:block;font-size:.72rem;color:#b7c1c9;margin-top:3px}
+.social-monogram{display:grid;place-items:center;flex-shrink:0;width:39px;height:39px;border-radius:12px;font-size:.75rem;font-weight:900;letter-spacing:.01em;color:white;background:#242f39}
+.social-tg{background:#258cc4}.social-vk{background:#276cd5}.social-ig{background:linear-gradient(145deg,#7856c5,#cb408a,#d98a35)}
+.social-qr{width:146px;height:146px;max-width:100%;display:grid;place-items:center;padding:8px;background:#fff;border-radius:12px;box-shadow:0 6px 22px #0003}
+.social-qr svg{width:100%;height:100%;display:block;shape-rendering:crispEdges}
+.social-visit{display:flex;align-items:center;justify-content:space-between;gap:6px;align-self:stretch;min-height:40px;border-radius:11px;padding:9px 12px;text-decoration:none;color:white;border:1px solid rgba(238,242,250,.19);background:rgba(255,255,255,.055);font-size:.8rem;font-weight:750}
+.social-visit:hover,.social-visit:focus-visible{background:rgba(216,46,61,.22);border-color:rgba(238,104,116,.75)}
+.social-visit span{font-size:1.13rem;color:#ff8592}
+.social-scroll-hint{display:none}
+@media(max-width:750px){
+ .social-head{align-items:start;flex-direction:column;gap:7px}
+ .social-section{padding:16px 13px}
+ .social-grid{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:minmax(185px,58%);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:#b65363 transparent}
+ .social-card{scroll-snap-align:start;padding:12px;gap:11px}
+ .social-qr{width:138px;height:138px}
+ .social-scroll-hint{display:block;color:#909dac;text-align:right;font-size:.72rem;margin:8px 2px 0}
+}
+@media(min-width:751px) and (max-width:970px){.social-qr{width:125px;height:125px}.social-card{padding:12px}.social-name{gap:8px}}

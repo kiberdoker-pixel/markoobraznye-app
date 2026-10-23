@@ -33,6 +33,30 @@
 <div class="welcome-strip"><div><div class="eyebrow" id="pageKicker">КЛУБНОЕ ПРИЛОЖЕНИЕ</div><h2 id="pageTitle">Главная</h2></div><button id="settings" class="iconbtn" title="Режим входа" aria-label="Режим входа">⚙</button></div>
 <main>
 <section data-page="home" class="page">
+<section class="social-section" aria-labelledby="social-title">
+  <div class="social-head">
+    <div><div class="eyebrow">НА СВЯЗИ С КЛУБОМ</div><h3 id="social-title">Мы в соцсетях</h3></div>
+    <p>Сканируй QR-код или переходи по ссылке. Делимся новостями, встречами и жизнью клуба.</p>
+  </div>
+  <div class="social-grid" aria-label="Социальные сети клуба">
+    <article class="social-card">
+      <div class="social-name"><span class="social-monogram social-tg" aria-hidden="true">TG</span><div><strong>Telegram</strong><small>Клубный чат</small></div></div>
+      <div class="social-qr" data-qr="telegram" role="img" aria-label="QR-код приглашения в Telegram-чат"></div>
+      <a class="social-visit" href="https://t.me/+G8howK-ojhw1MDAy" target="_blank" rel="noopener noreferrer">Открыть Telegram <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="social-card">
+      <div class="social-name"><span class="social-monogram social-vk" aria-hidden="true">VK</span><div><strong>ВКонтакте</strong><small>Наше сообщество</small></div></div>
+      <div class="social-qr" data-qr="vk" role="img" aria-label="QR-код сообщества ВКонтакте"></div>
+      <a class="social-visit" href="https://vk.ru/markoobrazznovosib" target="_blank" rel="noopener noreferrer">Открыть ВК <span aria-hidden="true">↗</span></a>
+    </article>
+    <article class="social-card">
+      <div class="social-name"><span class="social-monogram social-ig" aria-hidden="true">IG</span><div><strong>Instagram</strong><small>Фото и атмосфера</small></div></div>
+      <div class="social-qr" data-qr="instagram" role="img" aria-label="QR-код страницы Instagram"></div>
+      <a class="social-visit" href="https://www.instagram.com/markoobraz_nsk_54?psln=aGxvdmlwdWRoOXk0" target="_blank" rel="noopener noreferrer">Открыть Instagram <span aria-hidden="true">↗</span></a>
+    </article>
+  </div>
+  <p class="social-scroll-hint">Листай карточки в сторону <span aria-hidden="true">→</span></p>
+</section>
 <div class="hero"><div class="eyebrow">БОЛЬШЕ ЧЕМ КЛУБ</div><h2>Одна история.<br><span>Разные машины.</span></h2><p>Новости и предстоящие события автоклуба — всегда под рукой.</p><button data-to="news" class="btn primary">Читать новости ↗</button></div>
 <div class="sectionhead"><h3>Разделы клуба</h3></div>
 <div class="tile-grid">
@@ -77,5 +101,6 @@
 <button data-to="news">▤<span>Новости</span></button><button data-to="admins">♙<span>Админы</span></button><button data-to="history">◷<span>Архив</span></button></nav>
 </section></div>
 <dialog id="storyDialog"><button id="closeDialog" class="closebtn">✕</button><div id="dialogContent"></div></dialog>
+<script src="./social-qr.js" defer></script>
 <script src="./app.js" defer></script>
 </body></html>
