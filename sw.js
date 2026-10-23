@@ -1,0 +1,13 @@
+/* Network-first HTML, cache only static files; GitHub Issues are always queried online. */
+const VERSION='mnsk-issues-demo-v1';
+const BASE=new URL('./',self.registration.scope).href;
+const STATIC=['./','./index.html','./style.css','./app.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',ev=>ev.waitUntil(caches.open(VERSION).then(c=>c.addAll(STATIC)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',ev=>ev.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',ev=>{
+ if(ev.request.method!=='GET'||new URL(ev.request.url).origin!==self.location.origin)return;
+ ev.respondWith(fetch(ev.request).then(response=>{
+   if(response.ok&&new URL(ev.request.url).pathname.startsWith(new URL(BASE).pathname)){const copy=response.clone();caches.open(VERSION).then(c=>c.put(ev.request,copy));}
+   return response;
+ }).catch(()=>caches.match(ev.request).then(c=>c||caches.match('./index.html'))));
+});
