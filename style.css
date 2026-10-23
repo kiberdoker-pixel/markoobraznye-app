@@ -133,3 +133,63 @@ body:before,body:after{opacity:.11}
 @media (min-width:900px) {
   .petals{background-size:min(78vw,1180px) auto;opacity:.56}
 }
+
+
+/* Sakura atmosphere v14: more flowers along the lower corners and both sides.
+   Decorative layers stay BEHIND the content and use only opacity/transform animation. */
+.sakura-side{
+  position:fixed;
+  bottom:-3vh;
+  width:clamp(165px,28vw,370px);
+  height:min(88vh,920px);
+  pointer-events:none;
+  z-index:0;
+  background:url("./assets/sakura-branches.svg") no-repeat center bottom / 100% 100%;
+  mix-blend-mode:screen;
+  opacity:.64;
+  -webkit-mask-image:linear-gradient(to top,#000 0%,#000 67%,rgba(0,0,0,.5) 83%,transparent 100%);
+  mask-image:linear-gradient(to top,#000 0%,#000 67%,rgba(0,0,0,.5) 83%,transparent 100%);
+}
+.sakura-side--left{left:-34px}
+.sakura-side--right{right:-34px;transform:scaleX(-1);opacity:.55}
+.petals{opacity:.84}
+.sakura-breeze{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sakura-breeze span{
+  position:absolute;
+  bottom:-36px;
+  width:12px;height:17px;
+  border-radius:70% 15% 72% 25%;
+  background:linear-gradient(130deg,#ffd1df,#dd7fae 73%,#a8598c);
+  opacity:0;
+  animation:sakura-rise 25s linear infinite;
+  will-change:transform;
+}
+.sakura-breeze span:nth-child(1){left:7%;animation-delay:-6s;animation-duration:27s;transform:rotate(20deg)}
+.sakura-breeze span:nth-child(2){left:20%;animation-delay:-18s;animation-duration:32s;width:9px;height:13px}
+.sakura-breeze span:nth-child(3){left:76%;animation-delay:-13s;animation-duration:29s;width:10px;height:15px}
+.sakura-breeze span:nth-child(4){left:91%;animation-delay:-3s;animation-duration:26s}
+.sakura-breeze span:nth-child(5){left:58%;animation-delay:-23s;animation-duration:37s;width:8px;height:11px}
+.sakura-breeze span:nth-child(6){left:36%;animation-delay:-29s;animation-duration:35s;width:9px;height:12px}
+@keyframes sakura-rise{
+  0%{transform:translate3d(0,0,0) rotate(-20deg);opacity:0}
+  12%{opacity:.30}
+  65%{opacity:.27}
+  94%{opacity:.12}
+  100%{transform:translate3d(65px,-110vh,0) rotate(340deg);opacity:0}
+}
+@media (min-width:900px){
+  .petals{opacity:.71}
+  .sakura-side{height:min(85vh,930px);width:clamp(230px,29vw,450px)}
+  .sakura-side--left{left:-28px}
+  .sakura-side--right{right:-28px}
+}
+@media (max-width:620px){
+  .sakura-side{width:clamp(112px,34vw,190px);height:min(82vh,760px);opacity:.53}
+  .sakura-side--left{left:-22px}
+  .sakura-side--right{right:-22px;opacity:.48}
+  .petals{opacity:.79}
+  .sakura-breeze span{animation-duration:33s}
+}
+@media (prefers-reduced-motion:reduce){
+  .sakura-breeze span{animation:none;opacity:.13;transform:translate3d(0,-26vh,0)}
+}
