@@ -71,3 +71,18 @@ dialog{max-width:min(600px,95vw);max-height:85vh;overflow:auto;border:1px solid 
 
 /* Full-bleed header: preserve the original club artwork and its aspect ratio. */
 .masthead-full-logo{display:block;width:100%;height:auto;max-width:none;object-fit:contain}
+
+/* Administrator profiles: real vehicles and one photo placeholder. */
+.admin-grid--profiles{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.admin-profile{padding:0;background:linear-gradient(150deg,#1b232c,#10151c);display:flex;flex-direction:column;min-width:0}
+.admin-profile__photo,.admin-profile__placeholder{display:block;width:100%;aspect-ratio:4/3;min-height:0;background:#141b24;border-bottom:1px solid var(--stroke)}
+.admin-profile__photo{object-fit:cover;object-position:center center}
+.admin-profile__photo--mikhail{object-position:center 68%}
+.admin-profile__photo--irina{object-position:center 54%}
+.admin-profile__placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;text-align:center;background:radial-gradient(circle at 48% 25%,rgba(224,93,125,.16),transparent 45%),linear-gradient(150deg,#26313a,#11161e);color:#b8c3ce;font-size:.84rem;line-height:1.35}
+.admin-profile__placeholder-icon{display:grid;place-items:center;width:66px;height:66px;border:1px solid rgba(236,113,136,.32);background:rgba(17,25,34,.48);border-radius:18px;font-size:2rem}
+.admin-profile__details{padding:18px 20px 20px;flex:1}
+.admin-profile__details h3{margin:0;color:#f7f8fa;font-size:1.25rem}
+.admin-profile__details p{margin:8px 0 0;color:#f08a97;font-size:.89rem;font-weight:650}
+@media (max-width:920px){.admin-grid--profiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.admin-grid--profiles{grid-template-columns:1fr;gap:16px}.admin-profile__photo,.admin-profile__placeholder{aspect-ratio:5/3}.admin-profile__photo--mikhail{object-position:center 66%}.admin-profile__photo--irina{object-position:center 55%}}
