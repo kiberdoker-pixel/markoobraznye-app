@@ -252,3 +252,34 @@ body:before,body:after{opacity:.11}
  .tile-grid--club{grid-template-columns:repeat(2,minmax(0,1fr))}
  .tile-grid--club .tile--partners{grid-column:auto;min-height:156px}
 }
+
+/* Bottom navigation: reserve one identical icon row and one label row for all five items. */
+.bottom button{
+  justify-content:flex-start;
+  gap:5px;
+  min-width:0;
+}
+.bottom button > .nav-symbol{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  font-size:1.7rem;
+  line-height:1;
+}
+.bottom button > .nav-symbol svg{
+  display:block;
+  width:27px;
+  height:27px;
+  flex-shrink:0;
+}
+.bottom button > .nav-label{
+  display:block;
+  font-size:.67rem;
+  line-height:1.25;
+  white-space:nowrap;
+  min-height:1.25em;
+  text-align:center;
+}
