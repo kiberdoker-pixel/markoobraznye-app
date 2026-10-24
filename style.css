@@ -240,3 +240,15 @@ body:before,body:after{opacity:.11}
 .kapibara-credit span{display:inline-block;color:#10151e;background:rgba(224,232,240,.90);border:1px solid rgba(255,255,255,.25);border-radius:7px;padding:6px 11px;font-size:.72rem;font-weight:650;line-height:1.25;letter-spacing:.025em;box-shadow:0 3px 12px rgba(6,10,16,.14)}
 .welcome-card .kapibara-credit{margin-top:20px}
 @media(max-width:460px){.kapibara-credit{margin-top:25px}.kapibara-credit span{font-size:.69rem;padding:6px 10px}}
+
+/* Six club shortcuts: two balanced rows on desktop and 2 columns on phones. */
+.tile-grid--club{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tile-grid--club .tile--partners{grid-column:auto}
+.tile-icon--bag{display:flex;align-items:center;justify-content:flex-start}
+.tile-icon--bag svg{display:block;width:2rem;height:2rem}
+.bottom button svg{width:1.4rem;height:1.4rem;flex-shrink:0}
+.merch-empty::after{content:"✿"}
+@media(max-width:759px){
+ .tile-grid--club{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .tile-grid--club .tile--partners{grid-column:auto;min-height:156px}
+}

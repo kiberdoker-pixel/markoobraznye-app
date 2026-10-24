@@ -83,6 +83,7 @@
 <button class="tile" data-to="admins"><span class="tile-icon">♙</span><strong>Администраторы</strong><small>Люди и машины</small><span class="tile-arrow">↗</span></button>
 <button class="tile" data-to="news"><span class="tile-icon">▤</span><strong>Новости</strong><small>Что нового в клубе</small><span class="tile-arrow">↗</span></button>
 <button class="tile tile--partners" data-to="partners"><span class="tile-icon" aria-hidden="true">◇</span><strong>Партнёры</strong><small>Друзья и поддержка клуба</small><span class="tile-arrow" aria-hidden="true">↗</span></button>
+<button class="tile tile--merch" data-to="merch"><span class="tile-icon tile-icon--bag" aria-hidden="true"><svg viewBox="0 0 24 24" width="29" height="29" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1 13H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg></span><strong>Мерч</strong><small>Атрибутика клуба</small><span class="tile-arrow" aria-hidden="true">↗</span></button>
 </div>
 <div class="sectionhead"><h3>Последние публикации</h3><button class="minilink" data-to="news">Все новости →</button></div>
 <div id="home-news" class="newslist"></div>
@@ -96,6 +97,16 @@
 <div class="sectionhead"><h3>Ближайшие мероприятия</h3></div>
 <div class="event-card"><div class="day">31 <small>ОКТ</small></div><div><span class="badge">ПРИМЕР</span><h3>Клубная встреча</h3><p>Тестовая запись. Адрес и время будут уточнены.</p></div></div>
 <div class="event-card"><div class="day">07 <small>НОЯ</small></div><div><span class="badge">ПРИМЕР</span><h3>Клубный квест</h3><p>Демонстрация карточки мероприятия. Это не настоящий анонс.</p></div></div>
+</section>
+<section data-page="merch" class="page hidden">
+  <div class="sectionhead"><h3>Мерч автоклуба</h3></div>
+  <div class="partners-empty merch-empty">
+    <div class="partners-empty__symbol" aria-hidden="true"><svg viewBox="0 0 24 24" width="33" height="33" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16l-1 13H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg></div>
+    <div class="eyebrow">КЛУБНАЯ АТРИБУТИКА</div>
+    <h3>Скоро здесь появится мерч</h3>
+    <p>В этом разделе разместим клубные товары: фотографии, описания, размеры и стоимость. Пока раздел готовится к наполнению.</p>
+    <button class="btn outlined" data-to="home">← На главную</button>
+  </div>
 </section>
 <section data-page="history" class="page hidden">
 <div class="sectionhead"><h3>Архив мероприятий</h3></div>
@@ -155,7 +166,7 @@
 </div>
 <nav class="bottom" aria-label="Разделы">
 <button data-to="home" class="current">⌂<span>Главная</span></button><button data-to="calendar">▦<span>События</span></button>
-<button data-to="news">▤<span>Новости</span></button><button data-to="admins">♙<span>Админы</span></button><button data-to="history">◷<span>Архив</span></button></nav>
+<button data-to="news">▤<span>Новости</span></button><button data-to="admins">♙<span>Админы</span></button><button data-to="merch"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span>Мерч</span></button></nav>
 </section></div>
 <dialog id="storyDialog"><button id="closeDialog" class="closebtn">✕</button><div id="dialogContent"></div></dialog>
 <script src="./social-qr.js" defer></script>

@@ -7,7 +7,7 @@ const $=q=>document.querySelector(q);
 const $$=q=>Array.from(document.querySelectorAll(q));
 const onboard=$('#onboard'),screen=$('#screen'),remember=$('#remember');
 const saved=(()=>{try{return JSON.parse(localStorage.getItem('mnsk_pwa_preferences'))||{}}catch{return {}}})();
-const labels={home:['КЛУБНОЕ ПРИЛОЖЕНИЕ','Главная'],calendar:['ПЛАНЫ И ВСТРЕЧИ','Календарь мероприятий'],news:['ЖИЗНЬ КЛУБА','Новости'],admins:['ЛЮДИ И МАШИНЫ','Администраторы'],history:['АРХИВ КЛУБА','История клуба'],partners:['НАШИ ДРУЗЬЯ','Партнёры'],admin:['УПРАВЛЕНИЕ','Тестовый редактор']};
+const labels={home:['КЛУБНОЕ ПРИЛОЖЕНИЕ','Главная'],calendar:['ПЛАНЫ И ВСТРЕЧИ','Календарь мероприятий'],news:['ЖИЗНЬ КЛУБА','Новости'],admins:['ЛЮДИ И МАШИНЫ','Администраторы'],history:['АРХИВ КЛУБА','История клуба'],partners:['НАШИ ДРУЗЬЯ','Партнёры'],merch:['КЛУБНАЯ АТРИБУТИКА','Мерч'],admin:['УПРАВЛЕНИЕ','Тестовый редактор']};
 let current='home',cachedNews=[],loading=false,lastFetched=0;
 function login(member) {
   if(remember.checked) {try{localStorage.setItem('mnsk_pwa_preferences',JSON.stringify({mode:member?'member':'admin'}))}catch{}}
